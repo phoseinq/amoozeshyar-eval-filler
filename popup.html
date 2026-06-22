@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --bg:#f8fafc;
+    --brand:#059669; --brand-d:#047857;
+  }
+  * { box-sizing: border-box; }
+  body {
+    width: 268px; margin: 0; padding: 0;
+    font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+    background: var(--bg); color: var(--ink);
+  }
+  header {
+    display:flex; align-items:center; gap:10px;
+    padding:14px 16px; background:#fff; border-bottom:1px solid var(--line);
+  }
+  header img { width:34px; height:34px; }
+  header .t { line-height:1.2; }
+  header .t b { font-size:14px; font-weight:700; }
+  header .t span { display:block; font-size:10.5px; color:var(--muted); margin-top:2px; }
+
+  main { padding:14px 16px 16px; }
+  .lbl { font-size:11px; color:var(--muted); margin:0 0 9px; }
+
+  .opt {
+    display:flex; align-items:center; justify-content:space-between;
+    width:100%; margin:7px 0; padding:9px 11px; cursor:pointer;
+    background:#fff; border:1.5px solid var(--line); border-radius:11px;
+    font-size:13.5px; font-weight:500; color:var(--ink);
+    transition:border-color .12s, background .12s, transform .08s;
+  }
+  .opt:hover { transform:translateY(-1px); }
+  .opt.sel { background:var(--tint); border-color:var(--c); }
+  .opt .name { display:flex; align-items:center; gap:9px; }
+  .opt .dot { width:11px; height:11px; border-radius:50%; background:var(--c); flex:none; }
+  .bars { display:flex; gap:3px; align-items:center; }
+  .bars i { width:5px; height:14px; border-radius:2px; background:#e5e7eb; display:block; }
+  .bars i.on { background:var(--c); }
+
+  .row { display:flex; gap:8px; margin-top:14px; }
+  .btn {
+    flex:1; padding:11px; border:none; border-radius:11px; cursor:pointer;
+    font-family:inherit; font-size:13.5px; font-weight:700; transition:filter .12s, opacity .12s;
+  }
+  .btn:hover { filter:brightness(.96); }
+  .apply { background:var(--brand); color:#fff; }
+  .apply:disabled { background:#cbd5e1; cursor:not-allowed; }
+  .clear { background:#fff; color:#b91c1c; border:1.5px solid #fecaca; flex:0 0 84px; }
+
+  #status { font-size:11px; color:var(--muted); text-align:center; min-height:15px; margin-top:11px; }
+</style>
+</head>
+<body>
+  <header>
+    <img src="icon48.png" alt="">
+    <div class="t"><b>نظرسنجی آموزشیار</b><span>تکمیل خودکار فرم ارزشیابی</span></div>
+  </header>
+  <main>
+    <p class="lbl">یک گزینه را انتخاب کنید، سپس «اعمال» را بزنید:</p>
+    <div id="opts"></div>
+    <div class="row">
+      <button id="apply" class="btn apply" disabled>اعمال روی همه</button>
+      <button id="clear" class="btn clear">پاک کردن</button>
+    </div>
+    <div id="status"></div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
