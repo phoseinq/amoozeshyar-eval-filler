@@ -12,6 +12,13 @@
 
 دکمه‌ی «ثبت» خودِ صفحه را باید دستی بزنی — افزونه فقط گزینه‌ها را پر می‌کند.
 
+## دانلود
+با git:
+```bash
+git clone https://github.com/phoseinq/amoozeshyar-eval-filler.git
+```
+یا بدون git: روی دکمه‌ی سبز **Code** بزن → **Download ZIP** و فایل را از حالت فشرده خارج کن.
+
 ## نصب
 1. `chrome://extensions` را باز کن
 2. **Developer mode** را روشن کن
